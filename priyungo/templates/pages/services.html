@@ -1,0 +1,164 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Our Services - Priyu Foundation{% endblock %}
+
+{% block page_content %}
+
+<!-- Navbar -->
+<nav class="pf-nav">
+  <div class="pf-container">
+    <div class="pf-nav-inner">
+      <a href="/" class="pf-logo">
+        <img id="site-logo" src="/assets/priyungo/images/logo.jpeg" alt="Priyu Foundation">
+        <div class="pf-logo-text">
+          <span class="pf-logo-en">Priyu Foundation</span>
+          <span class="pf-logo-hi">सेवा संस्था · Indore</span>
+        </div>
+      </a>
+      <button class="pf-nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="pf-nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services" class="active">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/impact">Impact</a>
+        <a href="/contact">Contact</a>
+        <a href="/donate" class="pf-nav-donate">Donate Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Banner -->
+<section class="pf-page-banner">
+  <div class="pf-container">
+    <div class="pf-banner-inner">
+      <span class="pf-pill">हमारी सेवाएं</span>
+      <h1>हर जरूरत में साथ</h1>
+      <p>6 प्रमुख क्षेत्रों में निरंतर मानव सेवा — 24 घंटे, 365 दिन</p>
+      <div class="pf-breadcrumb">
+        <a href="/">Home</a> <span>/</span> <span>Services</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services List -->
+<section class="pf-section">
+  <div class="pf-container">
+    <div class="pf-svc-list" id="services-list">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Strategy Section -->
+<section class="pf-section pf-section-alt">
+  <div class="pf-container">
+    <div class="pf-sec-header">
+      <span class="pf-pill">विकास रणनीति</span>
+      <h2>Growth Strategies</h2>
+      <p>समाज में अधिक से अधिक लोगों तक सेवा पहुंचाना</p>
+    </div>
+    <div class="pf-strategy-grid">
+      <div class="pf-str-card">
+        <div class="pf-str-ico purple">
+          <i class="ti ti-building-community"></i>
+        </div>
+        <h3>सरकारी सहयोग</h3>
+        <p>सरकारी एवं गैर-सरकारी संस्थाओं के साथ सहयोग बढ़ाना</p>
+      </div>
+      <div class="pf-str-card">
+        <div class="pf-str-ico red">
+          <i class="ti ti-users"></i>
+        </div>
+        <h3>वॉलंटियर नेटवर्क</h3>
+        <p>स्वयंसेवकों की संख्या बढ़ाकर सेवा कार्यों का विस्तार करना</p>
+      </div>
+      <div class="pf-str-card">
+        <div class="pf-str-ico green">
+          <i class="ti ti-home-heart"></i>
+        </div>
+        <h3>अधिक आश्रय केंद्र</h3>
+        <p>अधिक आश्रय, उपचार और पुनर्वास सुविधाएं विकसित करना</p>
+      </div>
+      <div class="pf-str-card">
+        <div class="pf-str-ico amber">
+          <i class="ti ti-shield-check"></i>
+        </div>
+        <h3>पारदर्शिता</h3>
+        <p>पारदर्शिता और विश्वास के साथ समाज से सहयोग बढ़ावा देना</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="pf-join-section">
+  <div class="pf-container">
+    <div class="pf-join-inner">
+      <div class="pf-join-text">
+        <h2>इन सेवाओं में सहयोग करें</h2>
+        <p>आपका दान और सहयोग इन सेवाओं को आगे बढ़ाने में
+        मदद करता है। हर छोटा कदम बड़ा बदलाव लाता है।</p>
+      </div>
+      <div class="pf-join-btns">
+        <a href="/donate" class="pf-btn-primary">दान करें</a>
+        <a href="/contact" class="pf-btn-outline-dark">
+          स्वयंसेवक बनें →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="pf-footer">
+  <div class="pf-container">
+    <div class="pf-footer-inner">
+      <div class="pf-footer-brand">
+        <img src="/assets/priyungo/images/logo.jpeg"
+          alt="Priyu Foundation">
+        <p>© 2024 Priyu Foundation Seva Sanstha · Indore</p>
+        <div class="pf-social" id="social-links"></div>
+      </div>
+      <div class="pf-footer-links">
+        <h4>Quick Links</h4>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/impact">Impact</a>
+        <a href="/donate">Donate</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="pf-footer-links">
+        <h4>Our Services</h4>
+        <a href="/services">Blood Donation</a>
+        <a href="/services">Elder Care</a>
+        <a href="/services">Mental Health Rescue</a>
+        <a href="/services">Last Rites Service</a>
+        <a href="/services">Education Support</a>
+        <a href="/services">Health Aid</a>
+      </div>
+      <div class="pf-footer-contact">
+        <h4>Contact</h4>
+        <p><i class="ti ti-phone"></i> 9753343737</p>
+        <p><i class="ti ti-phone"></i> 7869963737</p>
+        <p><i class="ti ti-mail"></i>
+          jankioldagehomeindore@gmail.com</p>
+        <p><i class="ti ti-map-pin"></i> 2A Shri Vinayak Township,
+          Devguradiya, Indore</p>
+        <p><i class="ti ti-clock"></i> Open 24/7 · 365 Days</p>
+      </div>
+    </div>
+    <div class="pf-footer-bottom">
+      <p>© 2024 Priyu Foundation Seva Sanstha ·
+      12A & 80G Certified · Indore, Madhya Pradesh</p>
+    </div>
+  </div>
+</footer>
+
+{% endblock %}

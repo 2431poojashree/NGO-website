@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{purpose_name_en}",
+ "creation": "2026-06-07 16:13:14.356671",
+ "custom": 1,
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "purpose_name_hi",
+  "purpose_name_en",
+  "purpose_code",
+  "description",
+  "target_amount",
+  "display_color",
+  "display_icon",
+  "display_order",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "purpose_name_hi",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Purpose Name Hindi",
+   "reqd": 1
+  },
+  {
+   "fieldname": "purpose_name_en",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Purpose Name English",
+   "reqd": 1
+  },
+  {
+   "fieldname": "purpose_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Purpose Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "target_amount",
+   "fieldtype": "Currency",
+   "label": "Target Amount"
+  },
+  {
+   "fieldname": "display_color",
+   "fieldtype": "Select",
+   "label": "Display Color",
+   "options": "\nred\nblue\ngreen\npurple\namber"
+  },
+  {
+   "fieldname": "display_icon",
+   "fieldtype": "Data",
+   "label": "Display Icon"
+  },
+  {
+   "fieldname": "display_order",
+   "fieldtype": "Int",
+   "label": "Display Order"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active",
+   "options": "1"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-07 16:37:27.653658",
+ "modified_by": "sahupoojashree9@gmail.com",
+ "module": "Donation",
+ "name": "PF Donation Purpose",
+ "naming_rule": "Expression (old style)",
+ "owner": "sahupoojashree9@gmail.com",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "purpose_name_en"
+}

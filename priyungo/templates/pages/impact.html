@@ -1,0 +1,312 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Our Impact - Priyu Foundation{% endblock %}
+
+{% block page_content %}
+
+<!-- Navbar -->
+<nav class="pf-nav">
+  <div class="pf-container">
+    <div class="pf-nav-inner">
+      <a href="/" class="pf-logo">
+        <img id="site-logo"
+          src="/assets/priyungo/images/logo.jpeg"
+          alt="Priyu Foundation">
+        <div class="pf-logo-text">
+          <span class="pf-logo-en">Priyu Foundation</span>
+          <span class="pf-logo-hi">सेवा संस्था · Indore</span>
+        </div>
+      </a>
+      <button class="pf-nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="pf-nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/impact" class="active">Impact</a>
+        <a href="/contact">Contact</a>
+        <a href="/donate" class="pf-nav-donate">Donate Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Banner -->
+<section class="pf-page-banner">
+  <div class="pf-container">
+    <div class="pf-banner-inner">
+      <span class="pf-pill">हमारा प्रभाव</span>
+      <h1>Performance Overview</h1>
+      <p>संख्याओं में हमारी सेवा का विवरण</p>
+      <div class="pf-breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Impact</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Counter Section -->
+<section class="pf-section">
+  <div class="pf-container">
+    <div class="pf-sec-header">
+      <span class="pf-pill">आंकड़े</span>
+      <h2>अब तक का सफर</h2>
+      <p>2021 से अब तक किए गए कार्यों का विवरण</p>
+    </div>
+    <div class="pf-counter-grid" id="counter-grid">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Chart Section -->
+<section class="pf-section pf-section-alt">
+  <div class="pf-container">
+    <div class="pf-sec-header">
+      <span class="pf-pill">सेवा विश्लेषण</span>
+      <h2>सेवा का विस्तार</h2>
+      <p>विभिन्न क्षेत्रों में हमारा योगदान</p>
+    </div>
+    <div class="pf-chart-wrap">
+      <div class="pf-chart-bars" id="chart-bars">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Media Coverage -->
+<section class="pf-section">
+  <div class="pf-container">
+    <div class="pf-sec-header">
+      <span class="pf-pill">मीडिया कवरेज</span>
+      <h2>अखबारों में प्रियु फाउंडेशन</h2>
+      <p>हमारे काम को मीडिया ने सराहा</p>
+    </div>
+    <div class="pf-media-grid">
+      <div class="pf-media-card">
+        <div class="pf-media-pub">
+          <i class="ti ti-news"></i>
+          <span>दैनिक भास्कर</span>
+        </div>
+        <div class="pf-media-date">21 Sep 2025</div>
+        <h4>मानवीय सेवा कर अजय लावारिसों
+        की कर रहे मदद</h4>
+        <p>सीहोर — संस्था लगातार हताहत
+        लोगों की मदद के लिए कई लोग
+        सामने आए हैं।</p>
+        <span class="pf-media-tag">Dainik Bhaskar</span>
+      </div>
+      <div class="pf-media-card">
+        <div class="pf-media-pub">
+          <i class="ti ti-newspaper"></i>
+          <span>हिंदुस्तान मेल</span>
+        </div>
+        <div class="pf-media-date">भोपाल</div>
+        <h4>हताहत लोगों की सेवा में जुटा
+        प्रीयु फाउंडेशन</h4>
+        <p>हताहत लोगों की सेवा में जुटा
+        प्रीयु फाउंडेशन — 24 घंटे
+        सेवा में समर्पित।</p>
+        <span class="pf-media-tag">Hindustan Mail</span>
+      </div>
+      <div class="pf-media-card">
+        <div class="pf-media-pub">
+          <i class="ti ti-news"></i>
+          <span>दैनिक भास्कर</span>
+        </div>
+        <div class="pf-media-date">21 Feb 2022</div>
+        <h4>आपका रक्तदान किसी की
+        जिंदगी बचा सकता है</h4>
+        <p>सीहोर में रक्तदान शिविर का
+        आयोजन — 40 यूनिट रक्त
+        संग्रह किया गया।</p>
+        <span class="pf-media-tag">Dainik Bhaskar</span>
+      </div>
+      <div class="pf-media-card">
+        <div class="pf-media-pub">
+          <i class="ti ti-news"></i>
+          <span>हरिभूमि</span>
+        </div>
+        <div class="pf-media-date">Jan 2023</div>
+        <h4>प्रीयु फाउंडेशन सेवा संस्था ने
+        लिए कंबल वितरित</h4>
+        <p>ठंड में जरूरतमंदों को कंबल
+        वितरित किए — 1100+ कंबल
+        2 वर्षों में वितरित।</p>
+        <span class="pf-media-tag">Haribhoomi</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Success Stories -->
+<section class="pf-section pf-section-alt">
+  <div class="pf-container">
+    <div class="pf-sec-header">
+      <span class="pf-pill">सफलता की कहानियां</span>
+      <h2>अंधेरे से उजाले की ओर</h2>
+      <p>उन लोगों की कहानियां जिन्हें हमने
+      नया जीवन दिया</p>
+    </div>
+    <div class="pf-stories-grid">
+      <div class="pf-story-card">
+        <div class="pf-story-before-after">
+          <div class="pf-story-img">
+            <div class="pf-story-placeholder red">
+              <i class="ti ti-user"></i>
+            </div>
+            <span class="pf-story-label">पहले</span>
+          </div>
+          <div class="pf-story-arrow">
+            <i class="ti ti-arrow-right"></i>
+          </div>
+          <div class="pf-story-img">
+            <div class="pf-story-placeholder green">
+              <i class="ti ti-user-check"></i>
+            </div>
+            <span class="pf-story-label">अब</span>
+          </div>
+        </div>
+        <div class="pf-story-body">
+          <h4>मानसिक रोगी रेस्क्यू</h4>
+          <p>सड़क पर भटकते लावारिस
+          मानसिक रोगी को रेस्क्यू कर
+          उपचार और नया जीवन दिया।</p>
+          <span class="pf-story-cat">
+            Mental Health Rescue
+          </span>
+        </div>
+      </div>
+      <div class="pf-story-card">
+        <div class="pf-story-before-after">
+          <div class="pf-story-img">
+            <div class="pf-story-placeholder red">
+              <i class="ti ti-user"></i>
+            </div>
+            <span class="pf-story-label">पहले</span>
+          </div>
+          <div class="pf-story-arrow">
+            <i class="ti ti-arrow-right"></i>
+          </div>
+          <div class="pf-story-img">
+            <div class="pf-story-placeholder green">
+              <i class="ti ti-home-heart"></i>
+            </div>
+            <span class="pf-story-label">अब</span>
+          </div>
+        </div>
+        <div class="pf-story-body">
+          <h4>वृद्धाश्रम में आश्रय</h4>
+          <p>बेसहारा बुजुर्ग को जानकी
+          वृद्धाश्रम में आश्रय, भोजन
+          और देखभाल प्रदान की गई।</p>
+          <span class="pf-story-cat">Elder Care</span>
+        </div>
+      </div>
+      <div class="pf-story-card">
+        <div class="pf-story-before-after">
+          <div class="pf-story-img">
+            <div class="pf-story-placeholder red">
+              <i class="ti ti-droplet-off"></i>
+            </div>
+            <span class="pf-story-label">जरूरत</span>
+          </div>
+          <div class="pf-story-arrow">
+            <i class="ti ti-arrow-right"></i>
+          </div>
+          <div class="pf-story-img">
+            <div class="pf-story-placeholder green">
+              <i class="ti ti-droplet"></i>
+            </div>
+            <span class="pf-story-label">मदद</span>
+          </div>
+        </div>
+        <div class="pf-story-body">
+          <h4>रक्तदान से जीवन बचाया</h4>
+          <p>आपातकाल में जरूरतमंद
+          मरीज को समय पर रक्त
+          उपलब्ध कराया गया।</p>
+          <span class="pf-story-cat">Blood Donation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pf-join-section">
+  <div class="pf-container">
+    <div class="pf-join-inner">
+      <div class="pf-join-text">
+        <h2>आप भी इस सफर का हिस्सा बनें</h2>
+        <p>आपका सहयोग इन आंकड़ों को और
+        बड़ा बना सकता है।
+        हर दान, हर सेवा मायने रखती है।</p>
+      </div>
+      <div class="pf-join-btns">
+        <a href="/donate" class="pf-btn-primary">
+          दान करें
+        </a>
+        <a href="/contact" class="pf-btn-outline-dark">
+          स्वयंसेवक बनें →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="pf-footer">
+  <div class="pf-container">
+    <div class="pf-footer-inner">
+      <div class="pf-footer-brand">
+        <img src="/assets/priyungo/images/logo.jpeg"
+          alt="Priyu Foundation">
+        <p>© 2024 Priyu Foundation Seva Sanstha · Indore</p>
+        <div class="pf-social" id="social-links"></div>
+      </div>
+      <div class="pf-footer-links">
+        <h4>Quick Links</h4>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/impact">Impact</a>
+        <a href="/donate">Donate</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="pf-footer-links">
+        <h4>Our Services</h4>
+        <a href="/services">Blood Donation</a>
+        <a href="/services">Elder Care</a>
+        <a href="/services">Mental Health Rescue</a>
+        <a href="/services">Last Rites Service</a>
+        <a href="/services">Education Support</a>
+        <a href="/services">Health Aid</a>
+      </div>
+      <div class="pf-footer-contact">
+        <h4>Contact</h4>
+        <p><i class="ti ti-phone"></i> 9753343737</p>
+        <p><i class="ti ti-phone"></i> 7869963737</p>
+        <p><i class="ti ti-mail"></i>
+          jankioldagehomeindore@gmail.com</p>
+        <p><i class="ti ti-map-pin"></i>
+          2A Shri Vinayak Township,
+          Devguradiya, Indore</p>
+        <p><i class="ti ti-clock"></i>
+          Open 24/7 · 365 Days</p>
+      </div>
+    </div>
+    <div class="pf-footer-bottom">
+      <p>© 2024 Priyu Foundation Seva Sanstha ·
+      12A & 80G Certified · Indore, Madhya Pradesh</p>
+    </div>
+  </div>
+</footer>
+
+{% endblock %}

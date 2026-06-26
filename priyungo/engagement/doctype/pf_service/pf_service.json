@@ -1,0 +1,108 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:service_title_en",
+ "creation": "2026-06-11 19:59:52.926899",
+ "custom": 1,
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "service_title_en",
+  "service_title_hi",
+  "icon",
+  "short_desc",
+  "long_desc",
+  "cover_image",
+  "stats_label",
+  "display_order",
+  "is_featured",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_title_en",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Service Title English",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "service_title_hi",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Service Title Hindi",
+   "reqd": 1
+  },
+  {
+   "fieldname": "icon",
+   "fieldtype": "Data",
+   "label": "Icon"
+  },
+  {
+   "fieldname": "short_desc",
+   "fieldtype": "Small Text",
+   "label": "Short Description"
+  },
+  {
+   "fieldname": "long_desc",
+   "fieldtype": "Text Editor",
+   "label": "Long Description"
+  },
+  {
+   "fieldname": "cover_image",
+   "fieldtype": "Attach Image",
+   "label": "Cover Image"
+  },
+  {
+   "fieldname": "stats_label",
+   "fieldtype": "Data",
+   "label": "Status Label"
+  },
+  {
+   "fieldname": "display_order",
+   "fieldtype": "Int",
+   "label": "Display Order"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_featured",
+   "fieldtype": "Check",
+   "label": "Is Featured"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-12 21:53:53.587770",
+ "modified_by": "sahupoojashree9@gmail.com",
+ "module": "Donation",
+ "name": "PF Service",
+ "naming_rule": "Expression",
+ "owner": "sahupoojashree9@gmail.com",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

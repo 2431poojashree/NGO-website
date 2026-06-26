@@ -1,0 +1,219 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-06-07 17:00:44.538680",
+ "custom": 1,
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "receipt_prefix",
+  "receipt_start_no",
+  "default_currency",
+  "min_donation",
+  "bank_details_section",
+  "bank_acc_name",
+  "bank_acc_no",
+  "bank_ifsc",
+  "bank_branch",
+  "bank_mmid",
+  "bank_acc_type",
+  "upi_details_section",
+  "upi_id",
+  "upi_qr_image",
+  "online_gateway_section",
+  "razorpay_key",
+  "razorpay_secret",
+  "enable_online",
+  "receipt_config_section",
+  "receipt_org_name",
+  "receipt_org_address",
+  "text_80g",
+  "signature_image",
+  "auto_send_email",
+  "website_display_section",
+  "show_tracker",
+  "show_campaign_bar",
+  "thankyou_hi",
+  "thankyou_en"
+ ],
+ "fields": [
+  {
+   "fieldname": "receipt_prefix",
+   "fieldtype": "Data",
+   "label": "Receipt Prefix",
+   "options": "PFDON"
+  },
+  {
+   "fieldname": "receipt_start_no",
+   "fieldtype": "Int",
+   "label": "Receipt Starting Number",
+   "options": "1"
+  },
+  {
+   "fieldname": "default_currency",
+   "fieldtype": "Data",
+   "label": "Default Currency"
+  },
+  {
+   "fieldname": "min_donation",
+   "fieldtype": "Currency",
+   "label": "Minimum Donation Amount",
+   "options": "INR"
+  },
+  {
+   "fieldname": "bank_details_section",
+   "fieldtype": "Section Break",
+   "label": "Bank Details"
+  },
+  {
+   "fieldname": "bank_acc_name",
+   "fieldtype": "Data",
+   "label": "Bank Account Name"
+  },
+  {
+   "fieldname": "bank_acc_no",
+   "fieldtype": "Data",
+   "label": "Account Number"
+  },
+  {
+   "fieldname": "bank_ifsc",
+   "fieldtype": "Data",
+   "label": "IFSC Code"
+  },
+  {
+   "fieldname": "bank_branch",
+   "fieldtype": "Data",
+   "label": "Branch Name"
+  },
+  {
+   "fieldname": "bank_mmid",
+   "fieldtype": "Data",
+   "label": "MMID"
+  },
+  {
+   "fieldname": "bank_acc_type",
+   "fieldtype": "Data",
+   "label": "Account Type"
+  },
+  {
+   "fieldname": "upi_details_section",
+   "fieldtype": "Section Break",
+   "label": "UPI Details"
+  },
+  {
+   "fieldname": "upi_id",
+   "fieldtype": "Data",
+   "label": "UPI ID"
+  },
+  {
+   "fieldname": "upi_qr_image",
+   "fieldtype": "Attach Image",
+   "label": "UPI QR Code Image"
+  },
+  {
+   "fieldname": "online_gateway_section",
+   "fieldtype": "Section Break",
+   "label": "Online Gateway"
+  },
+  {
+   "fieldname": "razorpay_key",
+   "fieldtype": "Data",
+   "label": "Razorpay API Key"
+  },
+  {
+   "fieldname": "razorpay_secret",
+   "fieldtype": "Password",
+   "label": "Razorpay Secret"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_online",
+   "fieldtype": "Check",
+   "label": "Enable Online Donation"
+  },
+  {
+   "fieldname": "receipt_config_section",
+   "fieldtype": "Section Break",
+   "label": "Receipt Config"
+  },
+  {
+   "fieldname": "receipt_org_name",
+   "fieldtype": "Data",
+   "label": "Organization Name on Receipt"
+  },
+  {
+   "fieldname": "receipt_org_address",
+   "fieldtype": "Text",
+   "label": "Organization Address on Receipt"
+  },
+  {
+   "fieldname": "text_80g",
+   "fieldtype": "Text",
+   "label": "80G Text for Receipt"
+  },
+  {
+   "fieldname": "signature_image",
+   "fieldtype": "Attach Image",
+   "label": "Signature Image"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_send_email",
+   "fieldtype": "Check",
+   "label": "Auto Send Receipt Email"
+  },
+  {
+   "fieldname": "website_display_section",
+   "fieldtype": "Section Break",
+   "label": "Website Display"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_tracker",
+   "fieldtype": "Check",
+   "label": "Show Donation Tracker"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_campaign_bar",
+   "fieldtype": "Check",
+   "label": "Show Campaign Progress Bar"
+  },
+  {
+   "fieldname": "thankyou_hi",
+   "fieldtype": "Text",
+   "label": "Thank You Message Hindi"
+  },
+  {
+   "fieldname": "thankyou_en",
+   "fieldtype": "Text",
+   "label": "Thank You Message English"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-06-07 17:55:50.650429",
+ "modified_by": "sahupoojashree9@gmail.com",
+ "module": "Donation",
+ "name": "PF Donation Settings",
+ "owner": "sahupoojashree9@gmail.com",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

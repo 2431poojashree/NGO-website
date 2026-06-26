@@ -1,0 +1,295 @@
+{% extends "templates/web.html" %}
+
+{% block title %}About Us - Priyu Foundation{% endblock %}
+
+{% block page_content %}
+
+<!-- Navbar -->
+<nav class="pf-nav">
+  <div class="pf-container">
+    <div class="pf-nav-inner">
+      <a href="/" class="pf-logo">
+        <img id="site-logo" src="/assets/priyungo/images/logo.jpeg" alt="Priyu Foundation">
+        <div class="pf-logo-text">
+          <span class="pf-logo-en">Priyu Foundation</span>
+          <span class="pf-logo-hi">सेवा संस्था · Indore</span>
+        </div>
+      </a>
+      <button class="pf-nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="pf-nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/about" class="active">About</a>
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/impact">Impact</a>
+        <a href="/contact">Contact</a>
+        <a href="/donate" class="pf-nav-donate">Donate Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Banner -->
+<section class="pf-page-banner">
+  <div class="pf-container">
+    <div class="pf-banner-inner">
+      <span class="pf-pill">हमारे बारे में</span>
+      <h1>प्रियु फाउंडेशन सेवा संस्था</h1>
+      <p>एक सामाजिक एवं मानवीय संगठन — 2021 से निरंतर सेवा में</p>
+      <div class="pf-breadcrumb">
+        <a href="/">Home</a> <span>/</span> <span>About</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Story Section -->
+<section class="pf-section">
+  <div class="pf-container">
+    <div class="pf-about-row">
+      <div class="pf-about-img">
+        <img id="about-logo"
+          src="/assets/priyungo/images/logo.jpeg"
+          alt="Priyu Foundation">
+        <div class="pf-about-badge">
+          <div class="pf-about-badge-item">
+            <span class="pf-about-badge-num">2021</span>
+            <span class="pf-about-badge-lbl">स्थापना वर्ष</span>
+          </div>
+          <div class="pf-about-badge-item">
+            <span class="pf-about-badge-num">12A</span>
+            <span class="pf-about-badge-lbl">प्रमाणित</span>
+          </div>
+          <div class="pf-about-badge-item">
+            <span class="pf-about-badge-num">80G</span>
+            <span class="pf-about-badge-lbl">प्रमाणित</span>
+          </div>
+        </div>
+      </div>
+      <div class="pf-about-text">
+        <span class="pf-pill">हमारी कहानी</span>
+        <h2>इंसानियत की राह पर</h2>
+        <p>प्रियु फाउंडेशन सेवा संस्था एक सामाजिक एवं मानवीय संगठन है,
+        जो समाज के जरूरतमंद, बेसहारा और लावारिस लोगों की सहायता के
+        लिए समर्पित है। संस्था का उद्देश्य मानवता की सेवा करते हुए
+        उन लोगों तक मदद पहुँचाना है, जो किसी कारणवश समाज और
+        परिवार से दूर हो जाते हैं।</p>
+        <p>हजारों जरूरतमंदों तक सहायता पहुंचाकर संस्था समाज में
+        इंसानियत की मिसाल बन रही है। सेवा करके हमें कोई धन या
+        प्रसिद्धि नहीं मिलती, लेकिन जो सुकून और दुआएँ मिलती हैं —
+        वही हमारी सबसे बड़ी कमाई है।</p>
+        <p>जब किसी बेसहारा को सहारा मिलता है, किसी बीमार को इलाज
+        मिलता है या किसी लावारिस को सम्मान मिलता है, तो वही
+        हमारे लिए सबसे बड़ा पुरस्कार होता है।</p>
+        <div class="pf-about-chips">
+          <span class="pf-chip">रक्तदान</span>
+          <span class="pf-chip">वृद्ध सेवा</span>
+          <span class="pf-chip">मानसिक स्वास्थ्य</span>
+          <span class="pf-chip">पर्यावरण</span>
+          <span class="pf-chip">शिक्षा</span>
+          <span class="pf-chip-red">12A & 80G प्रमाणित</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="pf-section pf-section-alt">
+  <div class="pf-container">
+    <div class="pf-sec-header">
+      <span class="pf-pill">हमारा प्रभाव</span>
+      <h2>संख्याओं में सेवा</h2>
+      <p>अब तक किए गए कार्यों का विवरण</p>
+    </div>
+    <div class="pf-stats-grid" id="about-stats">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Timeline Section -->
+<section class="pf-section">
+  <div class="pf-container">
+    <div class="pf-sec-header">
+      <span class="pf-pill">हमारी यात्रा</span>
+      <h2>Timeline</h2>
+      <p>2021 से अब तक का सफर</p>
+    </div>
+    <div class="pf-timeline">
+      <div class="pf-tl-item">
+        <div class="pf-tl-dot"></div>
+        <div class="pf-tl-content">
+          <div class="pf-tl-year">2021</div>
+          <h3>संस्था की स्थापना</h3>
+          <p>प्रियु फाउंडेशन सेवा संस्था की स्थापना इंदौर, मध्यप्रदेश
+          में हुई। पहला रक्तदान शिविर आयोजित किया गया।</p>
+        </div>
+      </div>
+      <div class="pf-tl-item">
+        <div class="pf-tl-dot"></div>
+        <div class="pf-tl-content">
+          <div class="pf-tl-year">2022</div>
+          <h3>जानकी वृद्धाश्रम</h3>
+          <p>जानकी वृद्धाश्रम का सफलतापूर्वक संचालन शुरू हुआ।
+          1100+ कंबल वितरण अभियान चलाया गया।</p>
+        </div>
+      </div>
+      <div class="pf-tl-item">
+        <div class="pf-tl-dot"></div>
+        <div class="pf-tl-content">
+          <div class="pf-tl-year">2023</div>
+          <h3>मानसिक रोगी रेस्क्यू</h3>
+          <p>150+ लावारिस मानसिक रोगियों का रेस्क्यू कर उन्हें
+          नया जीवन दिया गया। 600+ दीपावली गिफ्ट वितरण।</p>
+        </div>
+      </div>
+      <div class="pf-tl-item">
+        <div class="pf-tl-dot"></div>
+        <div class="pf-tl-content">
+          <div class="pf-tl-year">2024-25</div>
+          <h3>ऐतिहासिक उपलब्धि</h3>
+          <p>3500+ लावारिस शवों का सम्मानपूर्वक अंतिम संस्कार।
+          6000+ रक्तदान का ऐतिहासिक आंकड़ा पार किया।</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vision Mission Section -->
+<section class="pf-section pf-section-alt">
+  <div class="pf-container">
+    <div class="pf-sec-header">
+      <span class="pf-pill">दृष्टि व मिशन</span>
+      <h2>Vision & Mission</h2>
+    </div>
+    <div class="pf-vm-grid">
+      <div class="pf-vm-card">
+        <div class="pf-vm-icon purple">
+          <i class="ti ti-eye"></i>
+        </div>
+        <h3>हमारी दृष्टि (Vision)</h3>
+        <p>प्रियु फाउंडेशन इन जरूरतमंद लोगों को भोजन, वस्त्र,
+        प्राथमिक देखभाल और उचित चिकित्सकीय उपचार उपलब्ध
+        कराने का कार्य करती है। संस्था का प्रयास है कि इन लोगों
+        को समाज की मुख्यधारा से जोड़ा जाए और उन्हें एक
+        सुरक्षित भविष्य मिल सके।</p>
+      </div>
+      <div class="pf-vm-card">
+        <div class="pf-vm-icon red">
+          <i class="ti ti-target"></i>
+        </div>
+        <h3>हमारा मिशन (Mission)</h3>
+        <p>हमारा संकल्प है कि मानवता की सेवा के इस कार्य को
+        आगे भी निरंतर जारी रखा जाए और हर जरूरतमंद तक
+        मदद पहुंचाई जाए। इंसानियत की राह पर चलते हुए हम
+        आगे बढ़ते रहेंगे।</p>
+      </div>
+      <div class="pf-vm-card">
+        <div class="pf-vm-icon green">
+          <i class="ti ti-growth"></i>
+        </div>
+        <h3>विकास रणनीति</h3>
+        <p>स्वयंसेवकों की संख्या बढ़ाकर सेवा कार्यों का विस्तार,
+        सरकारी एवं गैर-सरकारी संस्थाओं के साथ सहयोग,
+        पारदर्शिता और विश्वास के साथ समाज से सहयोग
+        एवं दान को बढ़ावा देना।</p>
+      </div>
+      <div class="pf-vm-card">
+        <div class="pf-vm-icon amber">
+          <i class="ti ti-heart-handshake"></i>
+        </div>
+        <h3>हमारे मूल्य</h3>
+        <p>इंसानियत, करुणा, सेवा, पारदर्शिता और समर्पण —
+        ये हमारे मूल मूल्य हैं। हम विश्वास करते हैं कि
+        हर इंसान को जीते जी नहीं बल्कि मृत्यु के बाद
+        भी सम्मान मिलना चाहिए।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="pf-section">
+  <div class="pf-container">
+    <div class="pf-sec-header">
+      <span class="pf-pill">हमारी टीम</span>
+      <h2>नींव के पत्थर</h2>
+      <p>वो लोग जो हर दिन सेवा में समर्पित हैं</p>
+    </div>
+    <div class="pf-team-grid" id="team-grid">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Join Us Section -->
+<section class="pf-join-section">
+  <div class="pf-container">
+    <div class="pf-join-inner">
+      <div class="pf-join-text">
+        <h2>हमारे साथ जुड़ें</h2>
+        <p>स्वयंसेवक बनें और मानवता की सेवा में योगदान दें।
+        आपका एक कदम किसी की जिंदगी बदल सकता है।</p>
+      </div>
+      <div class="pf-join-btns">
+        <a href="/contact" class="pf-btn-primary">
+          स्वयंसेवक बनें
+        </a>
+        <a href="/donate" class="pf-btn-outline-dark">
+          दान करें →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="pf-footer">
+  <div class="pf-container">
+    <div class="pf-footer-inner">
+      <div class="pf-footer-brand">
+        <img src="/assets/priyungo/images/logo.jpeg" alt="Priyu Foundation">
+        <p id="footer-text">© 2024 Priyu Foundation Seva Sanstha · Indore</p>
+        <div class="pf-social" id="social-links"></div>
+      </div>
+      <div class="pf-footer-links">
+        <h4>Quick Links</h4>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/impact">Impact</a>
+        <a href="/donate">Donate</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="pf-footer-links">
+        <h4>Our Services</h4>
+        <a href="/services">Blood Donation</a>
+        <a href="/services">Elder Care</a>
+        <a href="/services">Mental Health Rescue</a>
+        <a href="/services">Last Rites Service</a>
+        <a href="/services">Education Support</a>
+        <a href="/services">Health Aid</a>
+      </div>
+      <div class="pf-footer-contact">
+        <h4>Contact</h4>
+        <p><i class="ti ti-phone"></i> 9753343737</p>
+        <p><i class="ti ti-phone"></i> 7869963737</p>
+        <p><i class="ti ti-mail"></i> jankioldagehomeindore@gmail.com</p>
+        <p><i class="ti ti-map-pin"></i> 2A Shri Vinayak Township,
+        Devguradiya, Indore</p>
+        <p><i class="ti ti-clock"></i> Open 24/7 · 365 Days</p>
+      </div>
+    </div>
+    <div class="pf-footer-bottom">
+      <p>© 2024 Priyu Foundation Seva Sanstha ·
+      12A & 80G Certified · Indore, Madhya Pradesh</p>
+    </div>
+  </div>
+</footer>
+
+{% endblock %}

@@ -246,4 +246,23 @@ app_license = "mit"
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
+# Website Routes
+website_route_rules = [
+    {"from_route": "/", "to_route": "index"},
+    {"from_route": "/about", "to_route": "about"},
+    {"from_route": "/services", "to_route": "services"},
+    {"from_route": "/gallery", "to_route": "gallery"},
+    {"from_route": "/donate", "to_route": "donate"},
+    {"from_route": "/contact", "to_route": "contact"},
+    {"from_route": "/impact", "to_route": "impact"},
+]
 
+# CSS
+web_include_css = [
+    "/assets/priyungo/css/priyu.css"
+]
+
+# JS
+web_include_js = [
+    "/assets/priyungo/js/priyu.js"
+]

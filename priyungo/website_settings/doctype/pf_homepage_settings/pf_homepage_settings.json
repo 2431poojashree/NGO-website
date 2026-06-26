@@ -1,0 +1,199 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-06-14 14:05:25.122273",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "hero_section",
+  "hero_title_en",
+  "hero_title_hi",
+  "hero_subtitle_en",
+  "hero_subtitle_hi",
+  "hero_bg_image",
+  "cta1_label",
+  "cta1_link",
+  "cta2_label",
+  "cta2_link",
+  "sections_section",
+  "show_impact",
+  "show_services",
+  "show_gallery",
+  "show_team",
+  "show_stories",
+  "show_media",
+  "about_section",
+  "about_title_en",
+  "about_title_hi",
+  "about_desc",
+  "about_image",
+  "seo_section",
+  "meta_title",
+  "meta_desc",
+  "meta_keywords"
+ ],
+ "fields": [
+  {
+   "fieldname": "hero_section",
+   "fieldtype": "Section Break",
+   "label": "Hero Section"
+  },
+  {
+   "fieldname": "hero_title_en",
+   "fieldtype": "Data",
+   "label": "Hero Title English"
+  },
+  {
+   "fieldname": "hero_title_hi",
+   "fieldtype": "Data",
+   "label": "Hero Title Hindi"
+  },
+  {
+   "fieldname": "hero_subtitle_en",
+   "fieldtype": "Small Text",
+   "label": "Hero Subtitle English"
+  },
+  {
+   "fieldname": "hero_subtitle_hi",
+   "fieldtype": "Small Text",
+   "label": "Hero Subtitle Hindi"
+  },
+  {
+   "fieldname": "hero_bg_image",
+   "fieldtype": "Attach Image",
+   "label": "Hero Background Image"
+  },
+  {
+   "fieldname": "cta1_label",
+   "fieldtype": "Data",
+   "label": "CTA Button 1 Label"
+  },
+  {
+   "fieldname": "cta1_link",
+   "fieldtype": "Data",
+   "label": "CTA Button 1 Link"
+  },
+  {
+   "fieldname": "cta2_label",
+   "fieldtype": "Data",
+   "label": "CTA Button 2 Label"
+  },
+  {
+   "fieldname": "cta2_link",
+   "fieldtype": "Data",
+   "label": "CTA Button 2 Link"
+  },
+  {
+   "fieldname": "sections_section",
+   "fieldtype": "Section Break",
+   "label": "Sections Control "
+  },
+  {
+   "default": "0",
+   "fieldname": "show_impact",
+   "fieldtype": "Check",
+   "label": "Show Impact Strip"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_services",
+   "fieldtype": "Check",
+   "label": "Show Services Section"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_gallery",
+   "fieldtype": "Check",
+   "label": "Show Gallery Section"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_team",
+   "fieldtype": "Check",
+   "label": "Show Team Section"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_stories",
+   "fieldtype": "Check",
+   "label": "Show Success Stories"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_media",
+   "fieldtype": "Check",
+   "label": "Show Media Coverage"
+  },
+  {
+   "fieldname": "about_section",
+   "fieldtype": "Section Break",
+   "label": "About Section "
+  },
+  {
+   "fieldname": "about_title_en",
+   "fieldtype": "Data",
+   "label": "About Title English"
+  },
+  {
+   "fieldname": "about_title_hi",
+   "fieldtype": "Data",
+   "label": "About Title Hindi"
+  },
+  {
+   "fieldname": "about_desc",
+   "fieldtype": "Text Editor",
+   "label": "About Description"
+  },
+  {
+   "fieldname": "about_image",
+   "fieldtype": "Attach Image",
+   "label": "About Image"
+  },
+  {
+   "fieldname": "seo_section",
+   "fieldtype": "Section Break",
+   "label": "SEO"
+  },
+  {
+   "fieldname": "meta_title",
+   "fieldtype": "Data",
+   "label": "Meta Title"
+  },
+  {
+   "fieldname": "meta_desc",
+   "fieldtype": "Small Text",
+   "label": "Meta Description"
+  },
+  {
+   "fieldname": "meta_keywords",
+   "fieldtype": "Data",
+   "label": "Meta Keywords"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-06-14 16:35:38.079413",
+ "modified_by": "Administrator",
+ "module": "Website Settings",
+ "name": "PF Homepage Settings",
+ "owner": "sahupoojashree9@gmail.com",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

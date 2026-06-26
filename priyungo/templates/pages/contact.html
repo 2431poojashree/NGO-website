@@ -1,0 +1,413 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Contact Us - Priyu Foundation{% endblock %}
+
+{% block page_content %}
+
+<!-- Navbar -->
+<nav class="pf-nav">
+  <div class="pf-container">
+    <div class="pf-nav-inner">
+      <a href="/" class="pf-logo">
+        <img id="site-logo"
+          src="/assets/priyungo/images/logo.jpeg"
+          alt="Priyu Foundation">
+        <div class="pf-logo-text">
+          <span class="pf-logo-en">Priyu Foundation</span>
+          <span class="pf-logo-hi">सेवा संस्था · Indore</span>
+        </div>
+      </a>
+      <button class="pf-nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="pf-nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/impact">Impact</a>
+        <a href="/contact" class="active">Contact</a>
+        <a href="/donate" class="pf-nav-donate">Donate Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Banner -->
+<section class="pf-page-banner">
+  <div class="pf-container">
+    <div class="pf-banner-inner">
+      <span class="pf-pill">संपर्क करें</span>
+      <h1>हम आपके लिए यहाँ हैं</h1>
+      <p>24 घंटे, 365 दिन — सेवा में समर्पित</p>
+      <div class="pf-breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Contact</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Info Strip -->
+<div class="pf-contact-info-strip">
+  <div class="pf-container">
+    <div class="pf-contact-info-grid">
+      <div class="pf-ci-card">
+        <div class="pf-ci-ico purple">
+          <i class="ti ti-phone"></i>
+        </div>
+        <h4>Phone</h4>
+        <p id="ci-phone1">9753343737</p>
+        <p id="ci-phone2">7869963737</p>
+      </div>
+      <div class="pf-ci-card">
+        <div class="pf-ci-ico red">
+          <i class="ti ti-mail"></i>
+        </div>
+        <h4>Email</h4>
+        <p id="ci-email">
+          jankioldagehomeindore@gmail.com
+        </p>
+      </div>
+      <div class="pf-ci-card">
+        <div class="pf-ci-ico green">
+          <i class="ti ti-map-pin"></i>
+        </div>
+        <h4>Address</h4>
+        <p id="ci-address">
+          2A Shri Vinayak Township,
+          Devguradiya, Indore
+        </p>
+      </div>
+      <div class="pf-ci-card">
+        <div class="pf-ci-ico amber">
+          <i class="ti ti-clock"></i>
+        </div>
+        <h4>Office Hours</h4>
+        <p>24 Hours</p>
+        <p>365 Days</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Main Section -->
+<section class="pf-section">
+  <div class="pf-container">
+    <div class="pf-contact-main">
+
+      <!-- Contact Form -->
+      <div class="pf-contact-form-wrap">
+        <div class="pf-contact-form-box">
+          <h2>संदेश भेजें</h2>
+          <p>हमसे जुड़ें — स्वयंसेवक बनें, दान करें
+          या सहायता प्राप्त करें</p>
+
+          <div class="pf-form-row">
+            <div class="pf-form-group">
+              <label>आपका नाम *</label>
+              <input type="text" id="contact-name"
+                class="pf-form-input"
+                placeholder="पूरा नाम">
+            </div>
+            <div class="pf-form-group">
+              <label>मोबाइल नंबर *</label>
+              <input type="tel" id="contact-phone"
+                class="pf-form-input"
+                placeholder="+91 XXXXXXXXXX">
+            </div>
+          </div>
+
+          <div class="pf-form-row">
+            <div class="pf-form-group">
+              <label>ईमेल</label>
+              <input type="email" id="contact-email-input"
+                class="pf-form-input"
+                placeholder="email@example.com">
+            </div>
+            <div class="pf-form-group">
+              <label>शहर</label>
+              <input type="text" id="contact-city"
+                class="pf-form-input"
+                placeholder="आपका शहर">
+            </div>
+          </div>
+
+          <div class="pf-form-group">
+            <label>आप किस रूप में जुड़ना चाहते हैं? *</label>
+            <select id="inquiry-type" class="pf-form-input">
+              <option value="">चुनें...</option>
+              <option value="Volunteer">
+                स्वयंसेवक (Volunteer)
+              </option>
+              <option value="Donation">
+                दानदाता (Donor)
+              </option>
+              <option value="Need Help">
+                सहायता लेना (Need Help)
+              </option>
+              <option value="Media">
+                मीडिया / प्रेस
+              </option>
+              <option value="Other">अन्य (Other)</option>
+            </select>
+          </div>
+
+          <div class="pf-form-group">
+            <label>संदेश *</label>
+            <textarea id="contact-message"
+              class="pf-form-input pf-textarea"
+              placeholder="अपना संदेश यहाँ लिखें...">
+            </textarea>
+          </div>
+
+          <button class="pf-contact-submit"
+            onclick="submitContact()"
+            id="contact-submit-btn">
+            <i class="ti ti-send"></i>
+            संदेश भेजें
+          </button>
+
+          <!-- Success -->
+          <div class="pf-contact-success"
+            id="contact-success"
+            style="display:none">
+            <i class="ti ti-circle-check"></i>
+            <h3>संदेश भेज दिया गया!</h3>
+            <p>हम जल्द ही आपसे संपर्क करेंगे।</p>
+          </div>
+
+          <!-- Error -->
+          <div class="pf-donate-error"
+            id="contact-error"
+            style="display:none">
+            <i class="ti ti-alert-circle"></i>
+            <p id="contact-error-msg">
+              कुछ गलत हुआ। पुनः प्रयास करें।
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Volunteer Form -->
+      <div class="pf-volunteer-wrap">
+        <div class="pf-volunteer-box">
+          <h2>
+            <i class="ti ti-heart"></i>
+            स्वयंसेवक बनें
+          </h2>
+          <p>हमारी सेवा में योगदान दें</p>
+
+          <div class="pf-form-row">
+            <div class="pf-form-group">
+              <label>नाम *</label>
+              <input type="text" id="vol-name"
+                class="pf-form-input"
+                placeholder="पूरा नाम">
+            </div>
+            <div class="pf-form-group">
+              <label>मोबाइल *</label>
+              <input type="tel" id="vol-phone"
+                class="pf-form-input"
+                placeholder="+91 XXXXXXXXXX">
+            </div>
+          </div>
+
+          <div class="pf-form-row">
+            <div class="pf-form-group">
+              <label>शहर</label>
+              <input type="text" id="vol-city"
+                class="pf-form-input"
+                placeholder="आपका शहर">
+            </div>
+            <div class="pf-form-group">
+              <label>आयु</label>
+              <input type="number" id="vol-age"
+                class="pf-form-input"
+                placeholder="आयु">
+            </div>
+          </div>
+
+          <div class="pf-form-group">
+            <label>पेशा</label>
+            <input type="text" id="vol-profession"
+              class="pf-form-input"
+              placeholder="आपका पेशा">
+          </div>
+
+          <div class="pf-form-group">
+            <label>सेवा का क्षेत्र चुनें</label>
+            <div class="pf-interest-grid">
+              <label class="pf-interest-item">
+                <input type="checkbox" id="int-blood">
+                <span>
+                  <i class="ti ti-droplet"></i>
+                  रक्तदान
+                </span>
+              </label>
+              <label class="pf-interest-item">
+                <input type="checkbox" id="int-elder">
+                <span>
+                  <i class="ti ti-heart-handshake"></i>
+                  वृद्ध सेवा
+                </span>
+              </label>
+              <label class="pf-interest-item">
+                <input type="checkbox" id="int-rescue">
+                <span>
+                  <i class="ti ti-brain"></i>
+                  मानसिक रेस्क्यू
+                </span>
+              </label>
+              <label class="pf-interest-item">
+                <input type="checkbox" id="int-lastrites">
+                <span>
+                  <i class="ti ti-flame"></i>
+                  अंतिम संस्कार
+                </span>
+              </label>
+              <label class="pf-interest-item">
+                <input type="checkbox" id="int-events">
+                <span>
+                  <i class="ti ti-calendar-event"></i>
+                  इवेंट्स
+                </span>
+              </label>
+              <label class="pf-interest-item">
+                <input type="checkbox" id="int-social">
+                <span>
+                  <i class="ti ti-social"></i>
+                  सोशल मीडिया
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="pf-form-group">
+            <label>उपलब्धता</label>
+            <select id="vol-availability"
+              class="pf-form-input">
+              <option value="Weekends Only">
+                केवल सप्ताहांत
+              </option>
+              <option value="Weekdays Only">
+                केवल सप्ताह के दिन
+              </option>
+              <option value="Anytime">
+                कभी भी
+              </option>
+              <option value="Specific Days">
+                विशेष दिन
+              </option>
+            </select>
+          </div>
+
+          <div class="pf-form-group">
+            <label>संदेश</label>
+            <textarea id="vol-message"
+              class="pf-form-input pf-textarea"
+              placeholder="कुछ और बताना चाहते हैं?">
+            </textarea>
+          </div>
+
+          <button class="pf-volunteer-submit"
+            onclick="submitVolunteer()"
+            id="vol-submit-btn">
+            <i class="ti ti-user-plus"></i>
+            आवेदन करें
+          </button>
+
+          <!-- Success -->
+          <div class="pf-contact-success"
+            id="vol-success"
+            style="display:none">
+            <i class="ti ti-circle-check"></i>
+            <h3>आवेदन सफल!</h3>
+            <p>हम जल्द ही आपसे संपर्क करेंगे।</p>
+          </div>
+
+          <!-- Error -->
+          <div class="pf-donate-error"
+            id="vol-error"
+            style="display:none">
+            <i class="ti ti-alert-circle"></i>
+            <p id="vol-error-msg">
+              कुछ गलत हुआ। पुनः प्रयास करें।
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="pf-map-section">
+  <div class="pf-container">
+    <div class="pf-sec-header">
+      <span class="pf-pill">हमारा स्थान</span>
+      <h2>हमें यहाँ खोजें</h2>
+    </div>
+    <div class="pf-map-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.5!2d75.8577!3d22.7196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQzJzEwLjYiTiA3NcKwNTEnMjcuNyJF!5e0!3m2!1sen!2sin!4v1234567890"
+        width="100%"
+        height="400"
+        style="border:0;border-radius:14px"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="pf-footer">
+  <div class="pf-container">
+    <div class="pf-footer-inner">
+      <div class="pf-footer-brand">
+        <img src="/assets/priyungo/images/logo.jpeg"
+          alt="Priyu Foundation">
+        <p>© 2024 Priyu Foundation Seva Sanstha · Indore</p>
+        <div class="pf-social" id="social-links"></div>
+      </div>
+      <div class="pf-footer-links">
+        <h4>Quick Links</h4>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/impact">Impact</a>
+        <a href="/donate">Donate</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="pf-footer-links">
+        <h4>Our Services</h4>
+        <a href="/services">Blood Donation</a>
+        <a href="/services">Elder Care</a>
+        <a href="/services">Mental Health Rescue</a>
+        <a href="/services">Last Rites Service</a>
+        <a href="/services">Education Support</a>
+        <a href="/services">Health Aid</a>
+      </div>
+      <div class="pf-footer-contact">
+        <h4>Contact</h4>
+        <p><i class="ti ti-phone"></i> 9753343737</p>
+        <p><i class="ti ti-phone"></i> 7869963737</p>
+        <p><i class="ti ti-mail"></i>
+          jankioldagehomeindore@gmail.com</p>
+        <p><i class="ti ti-map-pin"></i>
+          2A Shri Vinayak Township,
+          Devguradiya, Indore</p>
+        <p><i class="ti ti-clock"></i> Open 24/7 · 365 Days</p>
+      </div>
+    </div>
+    <div class="pf-footer-bottom">
+      <p>© 2024 Priyu Foundation Seva Sanstha ·
+      12A & 80G Certified · Indore, Madhya Pradesh</p>
+    </div>
+  </div>
+</footer>
+
+{% endblock %}

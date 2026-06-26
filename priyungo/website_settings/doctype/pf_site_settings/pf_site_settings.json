@@ -1,0 +1,176 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-06-07 15:10:05.183192",
+ "custom": 1,
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "site_logo",
+  "site_name_en",
+  "site_name_hi",
+  "tagline_en",
+  "tagline_hi",
+  "founded_year",
+  "phone_1",
+  "phone_2",
+  "email",
+  "address",
+  "map_link",
+  "facebook_url",
+  "instagram_url",
+  "youtube_url",
+  "upi_id",
+  "upi_qr_code",
+  "bank_name",
+  "account_number",
+  "ifsc_code",
+  "branch_name",
+  "certificate_80g",
+  "12a_certificate",
+  "footer_text"
+ ],
+ "fields": [
+  {
+   "fieldname": "site_logo",
+   "fieldtype": "Attach Image",
+   "label": "Site Logo"
+  },
+  {
+   "fieldname": "site_name_en",
+   "fieldtype": "Data",
+   "label": "Site Name English"
+  },
+  {
+   "fieldname": "site_name_hi",
+   "fieldtype": "Data",
+   "label": "Site Name Hindi"
+  },
+  {
+   "fieldname": "tagline_en",
+   "fieldtype": "Data",
+   "label": "Tagline English"
+  },
+  {
+   "fieldname": "tagline_hi",
+   "fieldtype": "Data",
+   "label": "Tagline Hindi"
+  },
+  {
+   "fieldname": "founded_year",
+   "fieldtype": "Data",
+   "label": "Founded Year"
+  },
+  {
+   "fieldname": "phone_1",
+   "fieldtype": "Data",
+   "label": "Phone 1"
+  },
+  {
+   "fieldname": "phone_2",
+   "fieldtype": "Data",
+   "label": "Phone 2"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "map_link",
+   "fieldtype": "Data",
+   "label": "Google Map Link"
+  },
+  {
+   "fieldname": "facebook_url",
+   "fieldtype": "Data",
+   "label": "Facebook URL"
+  },
+  {
+   "fieldname": "instagram_url",
+   "fieldtype": "Data",
+   "label": "Instagram URL"
+  },
+  {
+   "fieldname": "youtube_url",
+   "fieldtype": "Data",
+   "label": "YouTube URL"
+  },
+  {
+   "fieldname": "upi_id",
+   "fieldtype": "Data",
+   "label": "UPI ID"
+  },
+  {
+   "fieldname": "upi_qr_code",
+   "fieldtype": "Attach Image",
+   "label": "UPI QR Code"
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Account Name"
+  },
+  {
+   "fieldname": "account_number",
+   "fieldtype": "Data",
+   "label": "Account Number"
+  },
+  {
+   "fieldname": "ifsc_code",
+   "fieldtype": "Data",
+   "label": "IFSC Code"
+  },
+  {
+   "fieldname": "branch_name",
+   "fieldtype": "Data",
+   "label": "Branch Name"
+  },
+  {
+   "fieldname": "certificate_80g",
+   "fieldtype": "Attach",
+   "label": "80G Certificate"
+  },
+  {
+   "fieldname": "12a_certificate",
+   "fieldtype": "Attach",
+   "label": "12A Certificate"
+  },
+  {
+   "fieldname": "footer_text",
+   "fieldtype": "Data",
+   "label": "Footer Copyright Text"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-06-07 16:09:25.157424",
+ "modified_by": "sahupoojashree9@gmail.com",
+ "module": "Website Settings",
+ "name": "PF Site Settings",
+ "owner": "sahupoojashree9@gmail.com",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
