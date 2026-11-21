@@ -1,0 +1,12 @@
+{
+ "doctype": "Page",
+ "name": "priyu-foundation",
+ "page_name": "priyu-foundation",
+ "title": "Priyu Foundation",
+ "module": "Website Settings",
+ "standard": "Yes",
+ "roles": [
+  {"role": "Website Manager"},
+  {"role": "System Manager"}
+ ]
+}

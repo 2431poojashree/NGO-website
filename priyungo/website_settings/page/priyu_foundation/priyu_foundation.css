@@ -1,0 +1,8 @@
+.priyu-homepage-preview {
+	display: block;
+	width: 100%;
+	height: calc(100vh - 11rem);
+	min-height: 28rem;
+	border: 1px solid var(--border-color);
+	border-radius: var(--border-radius-md);
+}
