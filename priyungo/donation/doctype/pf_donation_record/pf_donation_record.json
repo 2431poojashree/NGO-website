@@ -111,7 +111,7 @@
    "fieldname": "payment_mode",
    "fieldtype": "Select",
    "label": "Payment Mode",
-   "options": "Cash\nUPI / GPay / PhonePe\\nBank Transfer / NEFT / RTGS\nCheque\nDemand Draft\\nOnline Portal\nIn-Kind"
+   "options": "Cash\nUPI / GPay / PhonePe\nBank Transfer / NEFT / RTGS\nCheque\nDemand Draft\nOnline Portal\nIn-Kind"
   },
   {
    "fieldname": "transaction_id",

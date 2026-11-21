@@ -1,0 +1,11 @@
+{
+ "doctype": "Page",
+ "name": "donation-dashboard",
+ "page_name": "donation-dashboard",
+ "title": "Donation Dashboard",
+ "module": "Donation",
+ "standard": "Yes",
+ "roles": [
+  {"role": "System Manager"}
+ ]
+}

@@ -510,7 +510,7 @@ async function loadDonatePage() {
 
     // UPI details
     const upiContent = document.getElementById('upi-content');
-    if (upiContent) {
+    if (upiContent && (settings.upi_qr_image || settings.upi_id)) {
       upiContent.innerHTML = `
         ${settings.upi_qr_image
           ? `<img src="${settings.upi_qr_image}" alt="UPI QR Code">`
@@ -620,7 +620,7 @@ async function submitDonation() {
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json',
-          'X-Frappe-CSRF-Token': frappe.csrf_token || '' },
+          'X-Frappe-CSRF-Token': window.frappe?.csrf_token || '' },
         body: JSON.stringify({
           donor_name: name,
           donor_phone: phone,
@@ -629,9 +629,11 @@ async function submitDonation() {
           amount: amount,
           donation_purpose: purpose,
           payment_mode: paymentMode,
-          transaction_id: txnId,
+          transaction_id: (paymentMode === 'Cash' || paymentMode === 'Cheque') ? '' : txnId,
+          cheque_number: paymentMode === 'Cheque' ? document.getElementById('cheque-number').value : '',
+          bank_names: paymentMode === 'Cheque' ? document.getElementById('cheque-bank').value : '',
           receipt_80g: need80g ? 1 : 0,
-          pan_number: pan
+          pan_number: need80g ? pan : ''
         })
       }
     );
@@ -642,7 +644,7 @@ async function submitDonation() {
       if (success) success.style.display = 'block';
       if (successMsg) {
         successMsg.textContent =
-          'आपका दान सफलतापूर्वक दर्ज हो गया है। धन्यवाद!';
+          'आपके दान की जानकारी दर्ज हो गई है। भुगतान का सत्यापन बाकी है।';
       }
       if (donationId) {
         donationId.textContent =
@@ -653,6 +655,12 @@ async function submitDonation() {
       document.getElementById('donor-name').value = '';
       document.getElementById('donor-phone').value = '';
       document.getElementById('donor-email').value = '';
+      document.getElementById('transaction-id').value = '';
+      document.getElementById('cheque-number').value = '';
+      document.getElementById('cheque-bank').value = '';
+      document.getElementById('pan-number').value = '';
+      document.getElementById('need-80g').checked = false;
+      toggle80G(false);
     } else {
       if (error) error.style.display = 'flex';
       if (errorMsg) errorMsg.textContent =
@@ -671,14 +679,7 @@ async function submitDonation() {
   }
 }
 
-// Run on donate page
-if (document.getElementById('donate-purpose')) {
-  document.addEventListener('DOMContentLoaded', () => {
-    loadSiteSettings();
-    loadDonatePage();
-    initNav();
-  });
-}
+document.addEventListener('DOMContentLoaded', loadDonatePage);
 
 // Submit contact form
 async function submitContact() {

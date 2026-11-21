@@ -247,8 +247,9 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 # Website Routes
+home_page = "index"
+
 website_route_rules = [
-    {"from_route": "/", "to_route": "index"},
     {"from_route": "/about", "to_route": "about"},
     {"from_route": "/services", "to_route": "services"},
     {"from_route": "/gallery", "to_route": "gallery"},
