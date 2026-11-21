@@ -35,296 +35,124 @@
   </div>
 </nav>
 
-<!-- Page Banner -->
-<section class="pf-page-banner">
+<section class="pf-donation-section">
   <div class="pf-container">
-    <div class="pf-banner-inner">
-      <span class="pf-pill">दान करें</span>
-      <h1>आपका सहयोग ही हमारी ताकत है</h1>
-      <p>12A & 80G प्रमाणित संस्था — कर छूट लागू</p>
-      <div class="pf-breadcrumb">
-        <a href="/">Home</a> <span>/</span> <span>Donate</span>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="pf-donation-body" id="donation-page" lang="hi">
+      <header class="pf-donation-heading">
+        <h1 data-en="Make a donation">दान करें</h1>
+        <div class="pf-donation-languages" id="donation-languages" role="group"
+          aria-label="Donation page language" hidden>
+          <button type="button" data-language="hi" lang="hi" aria-pressed="true">हिन्दी</button>
+          <button type="button" data-language="en" lang="en" aria-pressed="false">English</button>
+        </div>
+      </header>
 
-<!-- Donate Main Section -->
-<section class="pf-section">
-  <div class="pf-container">
-    <div class="pf-donate-main">
-
-      <!-- Left — Donation Form -->
-      <div class="pf-donate-form-wrap">
-        <div class="pf-donate-form-box">
-          <h2>दान फॉर्म</h2>
-          <p>UPI या बैंक से भुगतान अलग से करें। यह फ़ॉर्म भुगतान की जानकारी सत्यापन के लिए भेजता है।</p>
-
-          <!-- Amount Selection -->
+      <form id="donation-form" class="pf-donate-form-box" novalidate>
+        <div class="pf-form-row">
           <div class="pf-form-group">
-            <label>दान राशि चुनें *</label>
-            <div class="pf-donate-amts">
-              <button class="pf-amt-big sel"
-                onclick="setDonateAmt(this,'500')">
-                ₹500
-              </button>
-              <button class="pf-amt-big"
-                onclick="setDonateAmt(this,'1000')">
-                ₹1,000
-              </button>
-              <button class="pf-amt-big"
-                onclick="setDonateAmt(this,'2000')">
-                ₹2,000
-              </button>
-              <button class="pf-amt-big"
-                onclick="setDonateAmt(this,'5000')">
-                ₹5,000
-              </button>
-              <button class="pf-amt-big"
-                onclick="setDonateAmt(this,'10000')">
-                ₹10,000
-              </button>
-              <button class="pf-amt-big"
-                onclick="setDonateAmt(this,'')">
-                अन्य
-              </button>
-            </div>
-            <input type="number" id="donate-amount"
-              class="pf-form-input" placeholder="राशि दर्ज करें (₹)"
-              value="500">
+            <label for="donate-amount" data-en="Amount (₹)">दान राशि (₹)</label>
+            <input type="number" id="donate-amount" name="amount" class="pf-form-input"
+              inputmode="decimal" min="0.01" step="0.01" required>
           </div>
-
-          <!-- Purpose -->
           <div class="pf-form-group">
-            <label>दान का उद्देश्य *</label>
-            <select id="donate-purpose" class="pf-form-input">
-              <option value="">उद्देश्य चुनें...</option>
+            <label for="donate-purpose" data-en="Donation purpose">दान का उद्देश्य</label>
+            <select id="donate-purpose" name="donation_purpose" class="pf-form-input" required>
+              <option value="" data-en="Choose a purpose">उद्देश्य चुनें</option>
             </select>
           </div>
+        </div>
 
-          <!-- Donor Name -->
-          <div class="pf-form-row">
-            <div class="pf-form-group">
-              <label>आपका नाम *</label>
-              <input type="text" id="donor-name"
-                class="pf-form-input"
-                placeholder="पूरा नाम">
-            </div>
-            <div class="pf-form-group">
-              <label>मोबाइल नंबर *</label>
-              <input type="tel" id="donor-phone"
-                class="pf-form-input"
-                placeholder="+91 XXXXXXXXXX">
-            </div>
-          </div>
-
-          <!-- Email -->
+        <div class="pf-form-row">
           <div class="pf-form-group">
-            <label>ईमेल</label>
-            <input type="email" id="donor-email"
-              class="pf-form-input"
-              placeholder="email@example.com">
+            <label for="donor-name" data-en="Full name">पूरा नाम</label>
+            <input id="donor-name" name="donor_name" class="pf-form-input" autocomplete="name" required>
           </div>
-
-          <!-- Donor Type -->
           <div class="pf-form-group">
-            <label>दानदाता प्रकार</label>
-            <select id="donor-type" class="pf-form-input">
-              <option value="Individual">व्यक्तिगत (Individual)</option>
-              <option value="Organization">संस्था (Organization)</option>
-              <option value="Corporate">कॉर्पोरेट (Corporate)</option>
-              <option value="Anonymous">अज्ञात (Anonymous)</option>
+            <label for="donor-phone" data-en="Mobile number">मोबाइल नंबर</label>
+            <input type="tel" id="donor-phone" name="donor_phone" class="pf-form-input"
+              autocomplete="tel" required>
+          </div>
+        </div>
+
+        <div class="pf-form-row">
+          <div class="pf-form-group">
+            <label for="donor-email" data-en="Email (optional)">ईमेल (वैकल्पिक)</label>
+            <input type="email" id="donor-email" name="donor_email" class="pf-form-input" autocomplete="email">
+          </div>
+          <div class="pf-form-group">
+            <label for="payment-mode" data-en="Payment method">भुगतान का तरीका</label>
+            <select id="payment-mode" name="payment_mode" class="pf-form-input" required>
+              <option value="Online Portal" data-en="Online payment (Razorpay)" hidden disabled>ऑनलाइन भुगतान (Razorpay)</option>
+              <option value="UPI / GPay / PhonePe" data-en="Direct UPI">सीधा UPI</option>
+              <option value="Bank Transfer / NEFT / RTGS" data-en="Bank transfer">बैंक ट्रांसफर</option>
+              <option value="Cash" data-en="Cash">नकद</option>
+              <option value="Cheque" data-en="Cheque">चेक</option>
             </select>
           </div>
+        </div>
 
-          <!-- Payment Mode -->
+        <div class="pf-donation-instructions" id="test-mode-notice" hidden
+          data-en="Razorpay test mode. No real money will be charged.">Razorpay टेस्ट मोड। असली पैसे नहीं कटेंगे।</div>
+
+        <details class="pf-donation-details" id="direct-payment-details" hidden>
+          <summary data-en="View transfer details">भुगतान विवरण देखें</summary>
+          <div id="direct-payment-content"></div>
+        </details>
+        <div class="pf-form-group" id="txn-group" hidden>
+          <label for="transaction-id" data-en="Transaction ID / UTR (optional)">ट्रांज़ैक्शन ID / UTR (वैकल्पिक)</label>
+          <input id="transaction-id" name="transaction_id" class="pf-form-input">
+        </div>
+        <div class="pf-form-row" id="cheque-group" hidden>
           <div class="pf-form-group">
-            <label>भुगतान का तरीका *</label>
-            <select id="payment-mode" class="pf-form-input"
-              onchange="showPaymentFields(this.value)">
-              <option value="UPI / GPay / PhonePe">
-                UPI / GPay / PhonePe
-              </option>
-              <option value="Bank Transfer / NEFT / RTGS">
-                Bank Transfer / NEFT
-              </option>
-              <option value="Cash">Cash (नकद)</option>
-              <option value="Cheque">Cheque</option>
+            <label for="cheque-number" data-en="Cheque number">चेक नंबर</label>
+            <input id="cheque-number" name="cheque_number" class="pf-form-input">
+          </div>
+          <div class="pf-form-group">
+            <label for="cheque-bank" data-en="Bank name">बैंक का नाम</label>
+            <input id="cheque-bank" name="bank_names" class="pf-form-input">
+          </div>
+        </div>
+
+        <details class="pf-donation-details">
+          <summary data-en="Donor type and 80G receipt">दानदाता प्रकार और 80G रसीद</summary>
+          <div class="pf-form-group">
+            <label for="donor-type" data-en="Donor type">दानदाता प्रकार</label>
+            <select id="donor-type" name="donor_type" class="pf-form-input">
+              <option value="Individual" data-en="Individual">व्यक्तिगत</option>
+              <option value="Organization" data-en="Organization">संस्था</option>
+              <option value="Corporate" data-en="Corporate">कॉर्पोरेट</option>
+              <option value="Anonymous" data-en="Anonymous">अज्ञात</option>
             </select>
           </div>
-
-          <!-- Transaction ID -->
-          <div class="pf-form-group" id="txn-group">
-            <label>Transaction ID / UTR Number</label>
-            <input type="text" id="transaction-id"
-              class="pf-form-input"
-              placeholder="Transaction ID दर्ज करें">
-          </div>
-
-          <!-- Cheque Fields -->
-          <div id="cheque-group" style="display:none">
-            <div class="pf-form-row">
-              <div class="pf-form-group">
-                <label>Cheque Number</label>
-                <input type="text" id="cheque-number"
-                  class="pf-form-input"
-                  placeholder="Cheque Number">
-              </div>
-              <div class="pf-form-group">
-                <label>Bank Name</label>
-                <input type="text" id="cheque-bank"
-                  class="pf-form-input"
-                  placeholder="Bank Name">
-              </div>
-            </div>
-          </div>
-
-          <!-- 80G Section -->
           <div class="pf-form-group pf-form-check">
-            <input type="checkbox" id="need-80g"
-              onchange="toggle80G(this.checked)">
-            <label for="need-80g">
-              मुझे 80G कर छूट प्रमाण पत्र चाहिए
-            </label>
+            <input type="checkbox" id="need-80g" name="receipt_80g" value="1">
+            <label for="need-80g" data-en="I need an 80G tax receipt">मुझे 80G रसीद चाहिए</label>
           </div>
-          <div id="pan-group" style="display:none">
-            <div class="pf-form-group">
-              <label>PAN Number *</label>
-              <input type="text" id="pan-number"
-                class="pf-form-input"
-                placeholder="ABCDE1234F">
-            </div>
+          <div class="pf-form-group" id="pan-group" hidden>
+            <label for="pan-number" data-en="PAN number">PAN नंबर</label>
+            <input id="pan-number" name="pan_number" class="pf-form-input" maxlength="10" pattern="[A-Za-z]{5}[0-9]{4}[A-Za-z]">
           </div>
+        </details>
 
-          <!-- Submit -->
-          <button class="pf-donate-submit"
-            onclick="submitDonation()"
-            id="donate-submit-btn">
-            <i class="ti ti-heart"></i>
-            दान दर्ज करें
-          </button>
-
-          <!-- Success Message -->
-          <div class="pf-donate-success" id="donate-success"
-            style="display:none">
-            <i class="ti ti-circle-check"></i>
-            <h3>धन्यवाद!</h3>
-            <p id="success-msg">
-              आपके दान की जानकारी दर्ज हो गई है। भुगतान का सत्यापन बाकी है।
-            </p>
-            <p class="pf-donation-id" id="donation-id"></p>
-          </div>
-
-          <!-- Error Message -->
-          <div class="pf-donate-error" id="donate-error"
-            style="display:none">
-            <i class="ti ti-alert-circle"></i>
-            <p id="error-msg">कुछ गलत हुआ। कृपया पुनः प्रयास करें।</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right — Bank Details -->
-      <div class="pf-donate-sidebar">
-
-        <!-- Bank Details Card -->
-        <div class="pf-bank-card" id="bank-card">
-          <h3>
-            <i class="ti ti-building-bank"></i>
-            बैंक विवरण
-          </h3>
-          <div class="pf-bank-details" id="bank-details">
-            बैंक विवरण उपलब्ध होने पर यहाँ दिखेंगे।
-          </div>
-        </div>
-
-        <!-- UPI Card -->
-        <div class="pf-upi-card" id="upi-card">
-          <h3>
-            <i class="ti ti-qrcode"></i>
-            UPI से दान करें
-          </h3>
-          <div class="pf-upi-content" id="upi-content">
-            UPI विवरण उपलब्ध होने पर यहाँ दिखेंगे।
-          </div>
-        </div>
-
-        <!-- Purpose Cards -->
-        <div class="pf-purpose-cards">
-          <h3>दान का उद्देश्य</h3>
-          <div id="purpose-cards-list">
-            <!-- filled by JS -->
-          </div>
-        </div>
-
-        <!-- Tax Info -->
-        <div class="pf-tax-card">
-          <h3>
-            <i class="ti ti-receipt-tax"></i>
-            कर छूट जानकारी
-          </h3>
-          <p>यह संस्था आयकर अधिनियम की धारा
-          <strong>12A और 80G</strong> के अंतर्गत
-          प्रमाणित है।</p>
-          <p>आपके दान पर कर छूट प्राप्त करने के लिए
-          PAN नंबर प्रदान करें।</p>
-          <div class="pf-tax-badges">
-            <span class="pf-tax-badge">12A Certified</span>
-            <span class="pf-tax-badge">80G Certified</span>
-          </div>
-        </div>
-      </div>
+        <button type="submit" class="pf-donate-submit" id="donate-submit-btn" disabled>
+          दान दर्ज करें
+        </button>
+        <p class="pf-donation-result" id="donation-result" role="status" tabindex="-1" hidden></p>
+      </form>
+      <dialog class="pf-donation-dialog" id="donation-dialog"
+        aria-labelledby="donation-dialog-title" aria-describedby="donation-dialog-message">
+        <h2 id="donation-dialog-title"></h2>
+        <p id="donation-dialog-message"></p>
+        <form method="dialog">
+          <button class="pf-donate-submit" id="donation-dialog-close" autofocus
+            data-en="OK">ठीक है</button>
+        </form>
+      </dialog>
     </div>
   </div>
 </section>
 
-<!-- Impact Section -->
-<section class="pf-section pf-section-alt">
-  <div class="pf-container">
-    <div class="pf-sec-header">
-      <span class="pf-pill">आपके दान का प्रभाव</span>
-      <h2>आपका ₹500 क्या कर सकता है?</h2>
-    </div>
-    <div class="pf-impact-cards">
-      <div class="pf-impact-card">
-        <div class="pf-impact-card-ico red">
-          <i class="ti ti-droplet"></i>
-        </div>
-        <div class="pf-impact-card-amt">₹500</div>
-        <p>एक रक्तदान शिविर में
-        सहायता सामग्री उपलब्ध
-        कराने में मदद करता है</p>
-      </div>
-      <div class="pf-impact-card">
-        <div class="pf-impact-card-ico purple">
-          <i class="ti ti-heart-handshake"></i>
-        </div>
-        <div class="pf-impact-card-amt">₹1,000</div>
-        <p>एक वृद्ध व्यक्ति का
-        एक महीने का भोजन
-        और देखभाल</p>
-      </div>
-      <div class="pf-impact-card">
-        <div class="pf-impact-card-ico green">
-          <i class="ti ti-brain"></i>
-        </div>
-        <div class="pf-impact-card-amt">₹2,000</div>
-        <p>एक मानसिक रोगी के
-        रेस्क्यू और प्रारंभिक
-        उपचार में सहायता</p>
-      </div>
-      <div class="pf-impact-card">
-        <div class="pf-impact-card-ico amber">
-          <i class="ti ti-flame"></i>
-        </div>
-        <div class="pf-impact-card-amt">₹5,000</div>
-        <p>एक लावारिस शव का
-        पूरे सम्मान के साथ
-        अंतिम संस्कार</p>
-      </div>
-    </div>
-  </div>
-</section>
+<script defer src="/assets/priyungo/js/donation.js"></script>
 
 <!-- Footer -->
 <footer class="pf-footer">

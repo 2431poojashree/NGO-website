@@ -23,6 +23,7 @@
   "online_gateway_section",
   "razorpay_key",
   "razorpay_secret",
+  "razorpay_webhook_secret",
   "enable_online",
   "receipt_config_section",
   "receipt_org_name",
@@ -34,7 +35,10 @@
   "show_tracker",
   "show_campaign_bar",
   "thankyou_hi",
-  "thankyou_en"
+  "thankyou_en",
+  "donation_language_section",
+  "default_donation_language",
+  "show_donation_language_switch"
  ],
  "fields": [
   {
@@ -126,6 +130,11 @@
    "label": "Razorpay Secret"
   },
   {
+   "fieldname": "razorpay_webhook_secret",
+   "fieldtype": "Password",
+   "label": "Razorpay Webhook Secret"
+  },
+  {
    "default": "0",
    "fieldname": "enable_online",
    "fieldtype": "Check",
@@ -188,6 +197,24 @@
    "fieldname": "thankyou_en",
    "fieldtype": "Text",
    "label": "Thank You Message English"
+  },
+  {
+   "fieldname": "donation_language_section",
+   "fieldtype": "Section Break",
+   "label": "Donation Page Language"
+  },
+  {
+   "fieldname": "default_donation_language",
+   "fieldtype": "Select",
+   "label": "Default Donation Page Language",
+   "options": "Hindi\nEnglish",
+   "default": "Hindi"
+  },
+  {
+   "fieldname": "show_donation_language_switch",
+   "fieldtype": "Check",
+   "label": "Allow Visitors to Switch Language",
+   "default": "1"
   }
  ],
  "grid_page_length": 50,

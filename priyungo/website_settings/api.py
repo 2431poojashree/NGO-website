@@ -1,4 +1,5 @@
 import frappe
+from frappe.utils.html_utils import sanitize_html
 
 @frappe.whitelist(allow_guest=True)
 def get_site_settings():
@@ -29,6 +30,7 @@ def get_site_settings():
 @frappe.whitelist(allow_guest=True)
 def get_homepage_settings():
     settings = frappe.get_single("PF Homepage Settings")
+    saved_values = frappe.db.get_singles_dict("PF Homepage Settings")
     return {
         "hero_title_en": settings.hero_title_en,
         "hero_title_hi": settings.hero_title_hi,
@@ -39,13 +41,13 @@ def get_homepage_settings():
         "cta1_link": settings.cta1_link,
         "cta2_label": settings.cta2_label,
         "cta2_link": settings.cta2_link,
-        "show_impact": settings.show_impact,
-        "show_services": settings.show_services,
-        "show_gallery": settings.show_gallery,
-        "show_team": settings.show_team,
+        "show_impact": saved_values.get("show_impact"),
+        "show_services": saved_values.get("show_services"),
+        "show_gallery": saved_values.get("show_gallery"),
+        "show_team": saved_values.get("show_team"),
         "about_title_en": settings.about_title_en,
         "about_title_hi": settings.about_title_hi,
-        "about_desc": settings.about_desc,
+        "about_desc": sanitize_html(settings.about_desc, always_sanitize=True) if settings.about_desc else "",
         "about_image": settings.about_image,
         "meta_title": settings.meta_title,
         "meta_desc": settings.meta_desc,

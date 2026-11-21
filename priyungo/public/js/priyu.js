@@ -15,7 +15,7 @@ async function loadSiteSettings() {
   try {
     const s = await apiFetch('website_settings.api.get_site_settings');
     if (s.site_logo) {
-      document.querySelectorAll('#site-logo,#footer-logo')
+      document.querySelectorAll('#site-logo,#hero-logo,#footer-logo')
         .forEach(el => el.src = s.site_logo);
     }
     if (s.phone_1) {
@@ -48,15 +48,21 @@ async function loadSiteSettings() {
 
 // Load homepage settings
 async function loadHomepageSettings() {
+  const hero = document.getElementById('home-hero');
+  if (!hero) return;
   try {
     const s = await apiFetch('website_settings.api.get_homepage_settings');
-    if (s.hero_title_hi) {
-      const el = document.getElementById('hero-title');
-      if (el) el.innerHTML = s.hero_title_hi;
-    }
-    if (s.hero_subtitle_hi) {
-      const el = document.getElementById('hero-sub');
-      if (el) el.textContent = s.hero_subtitle_hi;
+    const title = s.hero_title_hi || s.hero_title_en;
+    const subtitle = s.hero_subtitle_hi || s.hero_subtitle_en;
+    if (title) document.getElementById('hero-title').textContent = title;
+    if (subtitle) document.getElementById('hero-sub').textContent = subtitle;
+    if (s.hero_bg_image) {
+      const image = new URL(s.hero_bg_image, window.location.origin);
+      if (['https:', 'http:'].includes(image.protocol)) {
+        hero.style.backgroundImage = `linear-gradient(90deg, rgb(25 25 43 / 95%), rgb(25 25 43 / 65%)), url(${JSON.stringify(image.href)})`;
+        hero.style.backgroundSize = 'cover';
+        hero.style.backgroundPosition = 'center';
+      }
     }
     if (s.cta1_label) {
       const el = document.getElementById('cta1');
@@ -66,9 +72,21 @@ async function loadHomepageSettings() {
       const el = document.getElementById('cta2');
       if (el) { el.textContent = s.cta2_label; el.href = s.cta2_link || '/donate'; }
     }
-    if (s.about_title_en) {
-      const el = document.getElementById('about-title');
-      if (el) el.textContent = s.about_title_en;
+    if (s.about_title_hi || s.about_title_en) {
+      document.getElementById('about-title').textContent = s.about_title_hi || s.about_title_en;
+    }
+    if (s.about_desc) document.getElementById('about-desc').innerHTML = s.about_desc;
+    if (s.meta_title) document.title = s.meta_title;
+    for (const [name, value] of [['description', s.meta_desc], ['keywords', s.meta_keywords]]) {
+      const meta = document.querySelector(`meta[name="${name}"]`);
+      if (meta && value) meta.content = value;
+    }
+    for (const [key, id] of [
+      ['show_impact', 'impact-strip'], ['show_impact', 'stats-mini'],
+      ['show_services', 'services-section'], ['show_gallery', 'gallery-section'], ['show_team', 'team-section'],
+    ]) {
+      const section = document.getElementById(id);
+      if (section && s[key] != null) section.hidden = !Number(s[key]);
     }
     if (s.about_image) {
       const el = document.getElementById('about-img');
@@ -199,14 +217,6 @@ async function loadDonationSettings() {
       `;
     }
   } catch(e) { console.log('Donation settings error:', e); }
-}
-
-// Amount selector
-function selectAmt(el, amount) {
-  document.querySelectorAll('.pf-amt').forEach(a => a.classList.remove('sel'));
-  el.classList.add('sel');
-  const input = document.getElementById('custom-amount');
-  if (input) input.value = amount;
 }
 
 // Mobile nav toggle
@@ -435,251 +445,6 @@ if (document.getElementById('gallery-full')) {
     initNav();
   });
 }
-
-// Load donate page
-async function loadDonatePage() {
-  if (!document.getElementById('donate-purpose')) return;
-  try {
-    // Load purposes dropdown
-    const purposes = await apiFetch(
-      'donation.api.get_donation_purposes'
-    );
-    const select = document.getElementById('donate-purpose');
-    if (select) {
-      select.innerHTML = `
-        <option value="">उद्देश्य चुनें...</option>
-        ${purposes.map(p => `
-          <option value="${p.name}">
-            ${p.purpose_name_hi || p.purpose_name_en}
-          </option>
-        `).join('')}
-      `;
-    }
-
-    // Purpose cards in sidebar
-    const colors = {
-      red:'#c0392b', blue:'#378ADD',
-      green:'#1D9E75', purple:'#7F77DD', amber:'#BA7517'
-    };
-    const cardsList = document.getElementById('purpose-cards-list');
-    if (cardsList) {
-      cardsList.innerHTML = purposes.map(p => `
-        <div class="pf-purpose-item"
-          onclick="selectPurpose('${p.name}')">
-          <div class="pf-purpose-dot"
-            style="background:${colors[p.display_color]||'#7F77DD'}">
-          </div>
-          <span>${p.purpose_name_hi || p.purpose_name_en}</span>
-        </div>
-      `).join('');
-    }
-
-    // Load bank details
-    const settings = await apiFetch(
-      'donation.api.get_donation_settings'
-    );
-    const bankDetails = document.getElementById('bank-details');
-    if (bankDetails && settings.bank_acc_name) {
-      bankDetails.innerHTML = `
-        <div class="pf-bank-row">
-          <span>खाताधारक</span>
-          <span>${settings.bank_acc_name}</span>
-        </div>
-        <div class="pf-bank-row">
-          <span>खाता संख्या</span>
-          <span>${settings.bank_acc_no}</span>
-        </div>
-        <div class="pf-bank-row">
-          <span>IFSC Code</span>
-          <span>${settings.bank_ifsc}</span>
-        </div>
-        <div class="pf-bank-row">
-          <span>Branch</span>
-          <span>${settings.bank_branch}</span>
-        </div>
-        <div class="pf-bank-row">
-          <span>MMID</span>
-          <span>${settings.bank_mmid || '-'}</span>
-        </div>
-        <div class="pf-bank-row">
-          <span>Account Type</span>
-          <span>${settings.bank_acc_type || '-'}</span>
-        </div>
-      `;
-    }
-
-    // UPI details
-    const upiContent = document.getElementById('upi-content');
-    if (upiContent && (settings.upi_qr_image || settings.upi_id)) {
-      upiContent.innerHTML = `
-        ${settings.upi_qr_image
-          ? `<img src="${settings.upi_qr_image}" alt="UPI QR Code">`
-          : ''
-        }
-        ${settings.upi_id
-          ? `<div class="pf-upi-id">UPI: ${settings.upi_id}</div>`
-          : ''
-        }
-      `;
-    }
-
-  } catch(e) { console.log('Donate page error:', e); }
-}
-
-// Set donate amount
-function setDonateAmt(btn, amount) {
-  document.querySelectorAll('.pf-amt-big')
-    .forEach(b => b.classList.remove('sel'));
-  btn.classList.add('sel');
-  const input = document.getElementById('donate-amount');
-  if (input) input.value = amount;
-  if (amount) input.focus();
-}
-
-// Select purpose from sidebar
-function selectPurpose(name) {
-  const select = document.getElementById('donate-purpose');
-  if (select) select.value = name;
-}
-
-// Show payment fields by mode
-function showPaymentFields(mode) {
-  const txnGroup = document.getElementById('txn-group');
-  const chequeGroup = document.getElementById('cheque-group');
-  if (mode === 'Cheque') {
-    if (txnGroup) txnGroup.style.display = 'none';
-    if (chequeGroup) chequeGroup.style.display = 'block';
-  } else if (mode === 'Cash') {
-    if (txnGroup) txnGroup.style.display = 'none';
-    if (chequeGroup) chequeGroup.style.display = 'none';
-  } else {
-    if (txnGroup) txnGroup.style.display = 'block';
-    if (chequeGroup) chequeGroup.style.display = 'none';
-  }
-}
-
-// Toggle 80G PAN field
-function toggle80G(checked) {
-  const panGroup = document.getElementById('pan-group');
-  if (panGroup) {
-    panGroup.style.display = checked ? 'block' : 'none';
-  }
-}
-
-// Submit donation
-async function submitDonation() {
-  const btn = document.getElementById('donate-submit-btn');
-  const success = document.getElementById('donate-success');
-  const error = document.getElementById('donate-error');
-  const successMsg = document.getElementById('success-msg');
-  const errorMsg = document.getElementById('error-msg');
-  const donationId = document.getElementById('donation-id');
-
-  // Get values
-  const amount = document.getElementById('donate-amount').value;
-  const purpose = document.getElementById('donate-purpose').value;
-  const name = document.getElementById('donor-name').value;
-  const phone = document.getElementById('donor-phone').value;
-  const email = document.getElementById('donor-email').value;
-  const donorType = document.getElementById('donor-type').value;
-  const paymentMode = document.getElementById('payment-mode').value;
-  const txnId = document.getElementById('transaction-id').value;
-  const need80g = document.getElementById('need-80g').checked;
-  const pan = document.getElementById('pan-number').value;
-
-  // Validation
-  if (!amount || amount <= 0) {
-    alert('कृपया दान राशि दर्ज करें'); return;
-  }
-  if (!name) {
-    alert('कृपया अपना नाम दर्ज करें'); return;
-  }
-  if (!phone) {
-    alert('कृपया मोबाइल नंबर दर्ज करें'); return;
-  }
-  if (!purpose) {
-    alert('कृपया दान का उद्देश्य चुनें'); return;
-  }
-  if (need80g && !pan) {
-    alert('80G के लिए PAN नंबर जरूरी है'); return;
-  }
-
-  // Disable button
-  if (btn) {
-    btn.disabled = true;
-    btn.innerHTML = '<i class="ti ti-loader"></i> प्रतीक्षा करें...';
-  }
-
-  // Hide messages
-  if (success) success.style.display = 'none';
-  if (error) error.style.display = 'none';
-
-  try {
-    const result = await fetch(
-      '/api/method/priyungo.donation.api.submit_donation',
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json',
-          'X-Frappe-CSRF-Token': window.frappe?.csrf_token || '' },
-        body: JSON.stringify({
-          donor_name: name,
-          donor_phone: phone,
-          donor_email: email,
-          donor_type: donorType,
-          amount: amount,
-          donation_purpose: purpose,
-          payment_mode: paymentMode,
-          transaction_id: (paymentMode === 'Cash' || paymentMode === 'Cheque') ? '' : txnId,
-          cheque_number: paymentMode === 'Cheque' ? document.getElementById('cheque-number').value : '',
-          bank_names: paymentMode === 'Cheque' ? document.getElementById('cheque-bank').value : '',
-          receipt_80g: need80g ? 1 : 0,
-          pan_number: need80g ? pan : ''
-        })
-      }
-    );
-    const data = await result.json();
-    const res = data.message || data;
-
-    if (res.status === 'success') {
-      if (success) success.style.display = 'block';
-      if (successMsg) {
-        successMsg.textContent =
-          'आपके दान की जानकारी दर्ज हो गई है। भुगतान का सत्यापन बाकी है।';
-      }
-      if (donationId) {
-        donationId.textContent =
-          `Donation ID: ${res.donation_id}`;
-      }
-      // Reset form
-      document.getElementById('donate-amount').value = '';
-      document.getElementById('donor-name').value = '';
-      document.getElementById('donor-phone').value = '';
-      document.getElementById('donor-email').value = '';
-      document.getElementById('transaction-id').value = '';
-      document.getElementById('cheque-number').value = '';
-      document.getElementById('cheque-bank').value = '';
-      document.getElementById('pan-number').value = '';
-      document.getElementById('need-80g').checked = false;
-      toggle80G(false);
-    } else {
-      if (error) error.style.display = 'flex';
-      if (errorMsg) errorMsg.textContent =
-        res.message || 'कुछ गलत हुआ';
-    }
-  } catch(e) {
-    if (error) error.style.display = 'flex';
-    if (errorMsg) errorMsg.textContent =
-      'नेटवर्क समस्या। कृपया पुनः प्रयास करें।';
-  } finally {
-    if (btn) {
-      btn.disabled = false;
-      btn.innerHTML =
-        '<i class="ti ti-heart"></i> दान दर्ज करें';
-    }
-  }
-}
-
-document.addEventListener('DOMContentLoaded', loadDonatePage);
 
 // Submit contact form
 async function submitContact() {

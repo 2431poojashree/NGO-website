@@ -39,3 +39,27 @@ This app can use GitHub Actions for CI. The following workflows are configured:
 ### License
 
 mit
+
+### Donation page and Razorpay
+
+After updating the app, run `bench --site YOUR_SITE migrate`. In Frappe Desk, open
+**PF Donation Settings** to set **Default Donation Page Language** and
+**Allow Visitors to Switch Language**. Publish at least one active **PF Donation Purpose**
+for the donation form.
+
+1. Start in Razorpay Test Mode. Enter the test Key ID and Key Secret in
+   **PF Donation Settings**, then turn on **Enable Online Donation**.
+2. Set Razorpay to automatically capture payments. To verify payments even if
+   a donor closes their browser, register a webhook for `payment.captured` at
+   `https://YOUR_DOMAIN/api/method/priyungo.donation.razorpay.webhook`. Store the
+   webhook secret in **Razorpay Webhook Secret**. Use a different webhook secret
+   for each mode. The endpoint needs a publicly reachable HTTPS site.
+3. Test `/donate` and check that the captured payment creates a verified donation
+   with **Razorpay Mode** set to **Test**. The donation dashboard excludes test records.
+4. After Razorpay activates the merchant account and approves the website,
+   switch to Live Mode and replace the test keys and webhook secret with the
+   live values in **PF Donation Settings**. Set up auto-capture and the webhook
+   in Live Mode as well. Live checkout requires a webhook secret.
+
+Direct UPI, bank transfer, cash, and cheque submissions remain pending until
+an administrator checks the payment.

@@ -20,6 +20,8 @@
   "payment_info_section",
   "payment_mode",
   "transaction_id",
+  "razorpay_order_id",
+  "razorpay_mode",
   "cheque_number",
   "bank_names",
   "payment_screenshot",
@@ -117,6 +119,20 @@
    "fieldname": "transaction_id",
    "fieldtype": "Data",
    "label": "Transaction ID"
+  },
+  {
+   "fieldname": "razorpay_order_id",
+   "fieldtype": "Data",
+   "label": "Razorpay Order ID",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "razorpay_mode",
+   "fieldtype": "Select",
+   "label": "Razorpay Mode",
+   "options": "\nTest\nLive",
+   "read_only": 1
   },
   {
    "fieldname": "cheque_number",
