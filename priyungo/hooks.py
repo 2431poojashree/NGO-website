@@ -247,7 +247,7 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 # Website Routes
-home_page = "index"
+home_page = "priyu-home"
 
 website_route_rules = [
     {"from_route": "/about", "to_route": "about"},

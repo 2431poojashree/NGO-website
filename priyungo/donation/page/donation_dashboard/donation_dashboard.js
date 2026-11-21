@@ -37,7 +37,7 @@ frappe.pages["donation-dashboard"].on_page_load = (wrapper) => {
 		frappe.set_route("List", "PF Donation Record");
 	});
 	page.set_secondary_action(__("Refresh"), refresh);
-	page.add_menu_item(__("Open Website"), () => window.open("/", "_blank", "noopener"));
+	page.add_menu_item(__("Open Website"), () => window.open("/priyu-home", "_blank", "noopener"));
 	page.add_menu_item(__("Donation Settings"), () => {
 		frappe.set_route("Form", "PF Donation Settings", "PF Donation Settings");
 	});
