@@ -83,7 +83,7 @@ app_license = "mit"
 # ------------
 
 # before_install = "priyungo.install.before_install"
-# after_install = "priyungo.install.after_install"
+after_install = "priyungo.website_settings.homepage.create_homepage"
 
 # Uninstallation
 # ------------
@@ -248,6 +248,7 @@ app_license = "mit"
 # ignore_translatable_strings_from = []
 # Website Routes
 home_page = "priyu-home"
+update_website_context = "priyungo.website_settings.homepage.use_homepage_template"
 
 website_route_rules = [
     {"from_route": "/about", "to_route": "about"},
